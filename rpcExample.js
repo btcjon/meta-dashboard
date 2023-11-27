@@ -33,7 +33,31 @@ async function testMetaApiSynchronization() {
     console.log('account information:', await connection.getAccountInformation());
     console.log('positions:', await connection.getPositions());
     //console.log(await connection.getPosition('1234567'));
-    console.log('open orders:', await connection.getOrders());
+    // Fetch open trades
+    const openTrades = await connection.getOrders();
+    console.log('Fetched open trades:', openTrades);
+
+    // Process trades to sum values by Symbol and Type (buy or sell)
+    const tradeSummary = openTrades.reduce((summary, trade) => {
+      const key = `${trade.symbol}_${trade.type}`;
+      if (!summary[key]) {
+        summary[key] = {
+          symbol: trade.symbol,
+          type: trade.type,
+          volume: 0,
+          profit: 0,
+          swap: 0
+        };
+      }
+      summary[key].volume += trade.volume;
+      summary[key].profit += trade.profit;
+      summary[key].swap += trade.swap;
+      return summary;
+    }, {});
+
+    // Convert the summary object to an array for display
+    const tradeSummaryArray = Object.values(tradeSummary);
+    console.log('Trade summary:', tradeSummaryArray);
     //console.log(await connection.getOrder('1234567'));
     console.log('history orders by ticket:', await connection.getHistoryOrdersByTicket('1234567'));
     console.log('history orders by position:', await connection.getHistoryOrdersByPosition('1234567'));

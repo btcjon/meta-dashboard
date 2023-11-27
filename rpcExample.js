@@ -69,32 +69,62 @@ async function testMetaApiSynchronization() {
       await connection.getDealsByTimeRange(new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), new Date()));
     console.log('server time', await connection.getServerTime());
 
+    // The following sections are commented out as they are not used for fetching positions/open trades
+    /*
     // calculate margin required for trade
-    console.log('margin required for trade', await connection.calculateMargin({
-      symbol: 'GBPUSD',
-      type: 'ORDER_TYPE_BUY',
-      volume: 0.1,
-      openPrice: 1.1
-    }));
+    // console.log('margin required for trade', await connection.calculateMargin({
+    //   symbol: 'GBPUSD',
+    //   type: 'ORDER_TYPE_BUY',
+    //   volume: 0.1,
+    //   openPrice: 1.1
+    // }));
 
     // trade
-    console.log('Submitting pending order');
-    try {
-      let result = await
-      connection.createLimitBuyOrder('GBPUSD', 0.07, 1.0, 0.9, 2.0, {
-        comment: 'comm',
-        clientId: 'TE_GBPUSD_7hyINWqAlE'
-      });
-      console.log('Trade successful, result code is ' + result.stringCode);
-    } catch (err) {
-      console.log('Trade failed with result code ' + err.stringCode);
-    }
+    // console.log('Submitting pending order');
+    // try {
+    //   let result = await
+    //   connection.createLimitBuyOrder('GBPUSD', 0.07, 1.0, 0.9, 2.0, {
+    //     comment: 'comm',
+    //     clientId: 'TE_GBPUSD_7hyINWqAlE'
+    //   });
+    //   console.log('Trade successful, result code is ' + result.stringCode);
+    // } catch (err) {
+    //   console.log('Trade failed with result code ' + err.stringCode);
+    // }
+    */
+
+    // Only the necessary part for fetching positions/open trades is kept active
+    // Fetch open trades
+    const openTrades = await connection.getOrders();
+    console.log('Fetched open trades:', openTrades);
+
+    // Process trades to sum values by Symbol and Type (buy or sell)
+    const tradeSummary = openTrades.reduce((summary, trade) => {
+      const key = `${trade.symbol}_${trade.type}`;
+      if (!summary[key]) {
+        summary[key] = {
+          symbol: trade.symbol,
+          type: trade.type,
+          volume: 0,
+          profit: 0,
+          swap: 0
+        };
+      }
+      summary[key].volume += trade.volume;
+      summary[key].profit += trade.profit;
+      summary[key].swap += trade.swap;
+      return summary;
+    }, {});
+
+    // Convert the summary object to an array for display
+    const tradeSummaryArray = Object.values(tradeSummary);
+    console.log('Trade summary:', tradeSummaryArray);
 
     if(!deployedStates.includes(initialState)) {
       // undeploy account if it was undeployed
-      console.log('Undeploying account');
-      await connection.close();
-      await account.undeploy();
+      // console.log('Undeploying account');
+      // await connection.close();
+      // await account.undeploy();
     }
   
   } catch (err) {

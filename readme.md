@@ -14,7 +14,7 @@
 - [x] Create `src/services/metaApiService.js` to handle MetaApi logic.
 - [x] Create `src/pages/Dashboard.js` and `src/pages/Login.js` for page components.
 - [ ] Develop table component to display trades:
-  - [ ] Define columns for trade data.
+  - [ ] Define columns for trade data. (Symbol, Type, Volume. Profit, Swap)
   - [ ] Implement sorting functionality.
   - [ ] Implement filtering functionality.
 - [ ] Apply styling to match UI design:

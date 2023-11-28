@@ -4,6 +4,7 @@ import { fetchOpenTrades } from '../services/metaApiService';
 function Dashboard() {
   const [openTrades, setOpenTrades] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+  const [filter, setFilter] = useState('');
 
   const sortedTrades = useMemo(() => {
     let sortableTrades = [...openTrades];
@@ -29,6 +30,12 @@ function Dashboard() {
     setSortConfig({ key, direction });
   };
 
+  const filteredTrades = useMemo(() => {
+    return openTrades.filter(trade => {
+      return trade.symbol.toLowerCase().includes(filter.toLowerCase());
+    });
+  }, [openTrades, filter]);
+
   useEffect(() => {
     const loadOpenTrades = async () => {
       const trades = await fetchOpenTrades();
@@ -38,9 +45,14 @@ function Dashboard() {
     loadOpenTrades();
   }, []);
 
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
   return (
     <div>
       <h1>Dashboard Page</h1>
+      <input type="text" value={filter} onChange={handleFilterChange} placeholder="Filter by Symbol" />
       <table>
         <thead>
           <tr>
@@ -52,7 +64,7 @@ function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          {sortedTrades.map((trade, index) => (
+          {filteredTrades.map((trade, index) => (
             <tr key={index}>
               <td>{trade.symbol}</td>
               <td>{trade.type}</td>

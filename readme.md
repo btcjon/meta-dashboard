@@ -24,9 +24,16 @@ To begin, we want to focus on displaying an positions/open trades table.
 - [ ] Install and Customize 'Isomorphic' Template:
   - [x] Install the 'Isomorphic' template and dependencies.
   - [x] Run the template and review its features.
-  - [ ] Plan the integration of existing code into the template.
-          1. according to docs we simply need to use an existing table component.
-          2. the starting template page has what appears to be ALL available components and display types. (should we duplicate the page so we have a backup to reference?)
+  - [x] Plan the integration of existing code into the template:
+          - [ ] Familiarize with the template structure and component hierarchy.
+          - [ ] Backup the main page before editing.
+          - [ ] Identify where the table component is and how it receives data.
+          - [ ] Replace the table data with data fetched from `src/services/metaApiService.js`.
+          - [ ] Refactor the data-fetching logic if necessary to match the table component's requirements.
+          - [ ] Apply necessary styling and customization to the table component.
+          - [ ] Test the integration thoroughly.
+          - [ ] Update routing to include existing routes from the project.
+          - [ ] Gather feedback and iterate based on project requirements.
   - [ ] Integrate API services from the existing project.
   - [ ] Customize components and pages with project-specific code.
   - [ ] Apply branding and styling to match the project's design.

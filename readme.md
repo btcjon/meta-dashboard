@@ -43,3 +43,16 @@ To begin, we want to focus on displaying an positions/open trades table.
   - [ ] Iterate based on user feedback and project requirements.
 
 **Mark items as complete when they are done. Add/edit todo items as necessary.
+
+## Quick Reference Guide for Isomorphic Template
+
+- **Installation**: Follow the instructions in the `docs/howto_Introduction.md` to set up the Isomorphic template.
+- **File Structure**: Familiarize yourself with the file structure outlined in `docs/howto_iso_structure.txt`.
+- **Creating Pages**: To add a new page, refer to the steps in `docs/howto_new_page.md`.
+- **Routing**: Understand the routing system by reviewing `docs/howto_nav_routing.md`.
+- **Layouts**: Learn how to switch between different layouts using `docs/howto_layout.md`.
+- **Tables**: For implementing tables, check out `docs/howto_table.md`.
+- **Customization**: Customize sidebar items and other components as described in `docs/howto_nav_routing.md`.
+- **Support**: If you need help, consult the `docs/howto_Introduction.md` for support information.
+
+This guide is a starting point for developers to quickly integrate and customize the Isomorphic template for creating a custom dashboard.

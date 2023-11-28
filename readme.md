@@ -21,9 +21,5 @@
   - [ ] Reference UI design file or style guide.
   - [ ] Create responsive layout.
   - [ ] Implement theme colors and fonts.
-- [ ] Integrate additional features:
-  - [ ] Pagination for trade table.
-  - [ ] Export trades data to CSV.
-  - [ ] User authentication and authorization.
 
 **Mark items as complete when they are done. Add/edit todo items as necessary.

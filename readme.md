@@ -1,6 +1,6 @@
 # Meta Dashboard React App Development Plan
 
-- [ ] Initialize project with Create React App.
+- [x] Initialize project with Create React App.
 - [ ] Install necessary dependencies:
   - [ ] Install React Router for navigation.
   - [ ] Install Axios for HTTP requests.

@@ -17,9 +17,16 @@
   - [x] Define columns for trade data. (Symbol, Type, Volume. Profit, Swap)
   - [x] Implement sorting functionality.
   - [x] Implement filtering functionality.
-- [ ] Apply styling to match UI design:
-  - [ ] Reference UI design file or style guide.
-  - [ ] Create responsive layout.
-  - [ ] Implement theme colors and fonts.
+- [ ] Install and Customize 'Isomorphic' Template:
+  - [ ] Install the 'Isomorphic' template and dependencies.
+  - [ ] Run the template and review its features.
+  - [ ] Plan the integration of existing code into the template.
+  - [ ] Integrate API services from the existing project.
+  - [ ] Customize components and pages with project-specific code.
+  - [ ] Apply branding and styling to match the project's design.
+  - [ ] Update routing and navigation to include existing routes.
+  - [ ] Test the integrated application thoroughly.
+  - [ ] Deploy the customized template.
+  - [ ] Iterate based on user feedback and project requirements.
 
 **Mark items as complete when they are done. Add/edit todo items as necessary.

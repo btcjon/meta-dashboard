@@ -6,6 +6,7 @@
   - [x] Install Axios for HTTP requests.
   - [x] Install Redux for state management.
   - [x] Install Material-UI for UI components.
+- [x] Set up basic routing with React Router.
 - [ ] Implement real-time data for positions/open trades:
   - [ ] Connect to MetaApi.
   - [ ] Fetch open trades data.

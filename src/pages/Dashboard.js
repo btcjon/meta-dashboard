@@ -16,13 +16,28 @@ function Dashboard() {
   return (
     <div>
       <h1>Dashboard Page</h1>
-      <ul>
-        {openTrades.map((trade, index) => (
-          <li key={index}>
-            {trade.symbol}: {trade.volume}
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Type</th>
+            <th>Volume</th>
+            <th>Profit</th>
+            <th>Swap</th>
+          </tr>
+        </thead>
+        <tbody>
+          {openTrades.map((trade, index) => (
+            <tr key={index}>
+              <td>{trade.symbol}</td>
+              <td>{trade.type}</td>
+              <td>{trade.volume}</td>
+              <td>{trade.profit}</td>
+              <td>{trade.swap}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

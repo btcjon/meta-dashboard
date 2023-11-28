@@ -1,5 +1,9 @@
 # Meta Dashboard React App Development Plan
 
+The end goal is to provide a user dashboard using real-time data provided by metaapi to display forex trading data based on metatrader 4.
+
+To begin, we want to focus on displaying an positions/open trades table.
+
 - [x] Initialize project with Create React App.
 - [x] Install necessary dependencies:
   - [x] Install React Router for navigation.
@@ -18,9 +22,11 @@
   - [x] Implement sorting functionality.
   - [x] Implement filtering functionality.
 - [ ] Install and Customize 'Isomorphic' Template:
-  - [ ] Install the 'Isomorphic' template and dependencies.
-  - [ ] Run the template and review its features.
+  - [x] Install the 'Isomorphic' template and dependencies.
+  - [x] Run the template and review its features.
   - [ ] Plan the integration of existing code into the template.
+          1. according to docs we simply need to use an existing table component.
+          2. the starting template page has what appears to be ALL available components and display types. (should we duplicate the page so we have a backup to reference?)
   - [ ] Integrate API services from the existing project.
   - [ ] Customize components and pages with project-specific code.
   - [ ] Apply branding and styling to match the project's design.

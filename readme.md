@@ -16,7 +16,7 @@
 - [x] Develop table component to display trades:
   - [x] Define columns for trade data. (Symbol, Type, Volume. Profit, Swap)
   - [ ] Implement sorting functionality.
-  - [ ] Implement filtering functionality.
+  - [x] Implement filtering functionality.
 - [ ] Apply styling to match UI design:
   - [ ] Reference UI design file or style guide.
   - [ ] Create responsive layout.

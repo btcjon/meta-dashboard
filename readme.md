@@ -15,7 +15,7 @@
 - [x] Create `src/pages/Dashboard.js` and `src/pages/Login.js` for page components.
 - [x] Develop table component to display trades:
   - [x] Define columns for trade data. (Symbol, Type, Volume. Profit, Swap)
-  - [ ] Implement sorting functionality.
+  - [x] Implement sorting functionality.
   - [x] Implement filtering functionality.
 - [ ] Apply styling to match UI design:
   - [ ] Reference UI design file or style guide.

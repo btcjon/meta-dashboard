@@ -1,11 +1,11 @@
 # Meta Dashboard React App Development Plan
 
 - [x] Initialize project with Create React App.
-- [ ] Install necessary dependencies:
-  - [ ] Install React Router for navigation.
-  - [ ] Install Axios for HTTP requests.
-  - [ ] Install Redux for state management.
-  - [ ] Install Material-UI for UI components.
+- [x] Install necessary dependencies:
+  - [x] Install React Router for navigation.
+  - [x] Install Axios for HTTP requests.
+  - [x] Install Redux for state management.
+  - [x] Install Material-UI for UI components.
 - [ ] Implement real-time data for positions/open trades:
   - [ ] Connect to MetaApi.
   - [ ] Fetch open trades data.

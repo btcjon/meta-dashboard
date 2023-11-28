@@ -7,10 +7,12 @@
   - [x] Install Redux for state management.
   - [x] Install Material-UI for UI components.
 - [x] Set up basic routing with React Router.
-- [ ] Implement real-time data for positions/open trades:
-  - [ ] Connect to MetaApi.
-  - [ ] Fetch open trades data.
+- [x] Implement real-time data for positions/open trades:
+  - [x] Connect to MetaApi.
+  - [x] Fetch open trades data.
   - [ ] Update UI in real-time with fetched data.
+- [x] Create `src/services/metaApiService.js` to handle MetaApi logic.
+- [x] Create `src/pages/Dashboard.js` and `src/pages/Login.js` for page components.
 - [ ] Develop table component to display trades:
   - [ ] Define columns for trade data.
   - [ ] Implement sorting functionality.
